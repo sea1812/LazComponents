@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 86
+  Left = 868
   Height = 451
-  Top = 85
+  Top = 208
   Width = 562
   Caption = 'Form1'
   ClientHeight = 451
@@ -84,7 +84,7 @@ object Form1: TForm1
       Top = 61
       Width = 306
       TabOrder = 5
-      Text = 'Edit1'
+      Text = 'http://127.0.0.1/laztest/struct.php'
     end
     object Edit2: TEdit
       Left = 112
@@ -92,7 +92,7 @@ object Form1: TForm1
       Top = 96
       Width = 306
       TabOrder = 6
-      Text = 'Edit2'
+      Text = 'http://127.0.0.1/laztest/data.php'
     end
     object Button6: TButton
       Left = 432
@@ -100,6 +100,7 @@ object Form1: TForm1
       Top = 60
       Width = 94
       Caption = '导入网络结构'
+      OnClick = Button6Click
       TabOrder = 7
     end
     object Button7: TButton
@@ -108,6 +109,7 @@ object Form1: TForm1
       Top = 94
       Width = 94
       Caption = '导入网络数据'
+      OnClick = Button7Click
       TabOrder = 8
     end
   end

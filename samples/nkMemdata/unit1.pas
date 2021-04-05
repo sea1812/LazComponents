@@ -36,6 +36,8 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
 
   public
@@ -98,6 +100,23 @@ begin
   mJson:='[{"uname":"张三丰","uage":"1000","ulogin":"1617580800","uisman":"true","umoney":"9999.99"},{"uname":"觉远","uage":"1020","ulogin":"1617580800","uisman":"true","umoney":"8888.99"}]';
   if not mem.FillDataFromJson(mJson) then
     ShowMessage('ERROR');
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  if  mem.InitStructFromUrl(Edit1.Text) then
+    mem.Active:=True
+  else
+    ShowMessage('Error');
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  mem.Active:=True;
+  if  mem.FillDataFromUrl(Edit2.Text) then
+    mem.Active:=True
+  else
+    ShowMessage('Error');
 end;
 
 end.
