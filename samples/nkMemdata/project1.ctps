@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos Y="20"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -22,7 +22,7 @@
         <UnitName Value="Unit1"/>
         <TopLine Value="76"/>
         <CursorPos X="57" Y="86"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -31,8 +31,8 @@
         <UnitName Value="nkMemData"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="59"/>
-        <CursorPos X="8" Y="66"/>
+        <TopLine Value="106"/>
+        <CursorPos X="35" Y="121"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit2>

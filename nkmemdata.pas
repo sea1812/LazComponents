@@ -118,7 +118,7 @@ begin
       mStream:=TMemoryStream.Create;
       mTmp.SaveToStream(mStream);
       mStream.Seek(0, soBeginning);
-      JData:=GetJson(mStream, False);
+      JData:=GetJson(mStream, True);
       mStream.Free;
       mTmp.Free;
       Self.Close;
