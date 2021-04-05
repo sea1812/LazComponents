@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="MyLazPackage"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\$(LCLWidgetType)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="3">
+      <Item1>
+        <Filename Value="nktitlebar.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nkTitleBar"/>
+      </Item1>
+      <Item2>
+        <Filename Value="nkresizer.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nkResizer"/>
+      </Item2>
+      <Item3>
+        <Filename Value="nkmemdata.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nkMemData"/>
+      </Item3>
+    </Files>
+    <RequiredPkgs Count="4">
+      <Item1>
+        <PackageName Value="pl_indy"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="lz_memds"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="adLCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="adFCL"/>
+      </Item4>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>
