@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, typinfo, DB, DateUtils, LResources, Forms, Controls, Graphics, Dialogs, memds, IdHttp,
-  fpjson;
+  idGlobal, fpjson;
 
 type
 
@@ -45,7 +45,9 @@ constructor TnkMemData.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FHttp:=TIdHttp.Create(Self);
-
+  FHttp.HandleRedirects:=True;
+  FHttp.ReadTimeout:=30000;
+  FHttp.Request.UserAgent:='Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; Highland)';
 end;
 
 destructor TnkMemData.Destroy;
@@ -95,8 +97,15 @@ begin
 end;
 
 function TnkMemData.InitStructFromUrl(AUrl: string): boolean;
+var
+  mS:string;
 begin
-
+  try
+    mS:=FHttp.Get(AUrl);
+    Result:=Self.InitStructFromJson(mS);
+  except
+    Result:=False;
+  end;
 end;
 
 function TnkMemData.FillDataFromJson(AJson: string): boolean;
@@ -154,8 +163,15 @@ begin
 end;
 
 function TnkMemData.FillDataFromUrl(AUrl: string): boolean;
+var
+  mS:string;
 begin
-
+  try
+    mS:=FHttp.Get(AUrl,IndyTextEncoding_UTF8);
+    Result:=Self.FillDataFromJson(mS);
+  except
+    Result:=False;
+  end;
 end;
 
 function TnkMemData.ExportStructToJson: string;
