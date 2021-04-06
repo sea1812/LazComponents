@@ -11,7 +11,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\$(LCLWidgetType)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="3">
+    <Files Count="6">
       <Item1>
         <Filename Value="nktitlebar.pas"/>
         <HasRegisterProc Value="True"/>
@@ -27,20 +27,36 @@
         <HasRegisterProc Value="True"/>
         <UnitName Value="nkMemData"/>
       </Item3>
+      <Item4>
+        <Filename Value="MQTT.pas"/>
+        <UnitName Value="MQTT"/>
+      </Item4>
+      <Item5>
+        <Filename Value="MQTTReadThread.pas"/>
+        <UnitName Value="MQTTReadThread"/>
+      </Item5>
+      <Item6>
+        <Filename Value="nkmqtt.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nkMqtt"/>
+      </Item6>
     </Files>
-    <RequiredPkgs Count="4">
+    <RequiredPkgs Count="5">
       <Item1>
-        <PackageName Value="pl_indy"/>
+        <PackageName Value="pl_synapse"/>
       </Item1>
       <Item2>
-        <PackageName Value="lz_memds"/>
+        <PackageName Value="pl_indy"/>
       </Item2>
       <Item3>
-        <PackageName Value="adLCL"/>
+        <PackageName Value="lz_memds"/>
       </Item3>
       <Item4>
-        <PackageName Value="adFCL"/>
+        <PackageName Value="adLCL"/>
       </Item4>
+      <Item5>
+        <PackageName Value="adFCL"/>
+      </Item5>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>

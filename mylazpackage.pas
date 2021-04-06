@@ -8,7 +8,8 @@ unit MyLazPackage;
 interface
 
 uses
-  nkTitleBar, nkResizer, nkMemData, TyphonPackageIntf;
+  nkTitleBar, nkResizer, nkMemData, MQTT, MQTTReadThread, nkMqtt, 
+  TyphonPackageIntf;
 
 implementation
 
@@ -17,6 +18,7 @@ begin
   RegisterUnit('nkTitleBar', @nkTitleBar.Register);
   RegisterUnit('nkResizer', @nkResizer.Register);
   RegisterUnit('nkMemData', @nkMemData.Register);
+  RegisterUnit('nkMqtt', @nkMqtt.Register);
 end;
 
 initialization
