@@ -161,19 +161,19 @@ begin
           RL := RemainingLength(Length(VH) + Length(Payload));
           Data := BuildCommand(FH, RL, VH, Payload);
 
-          writeln('RX_START: ', FPSocket.LastErrorDesc);
-          writeln('RX_START: ', FPSocket.LastError);
+          //writeln('RX_START: ', FPSocket.LastErrorDesc);
+          //writeln('RX_START: ', FPSocket.LastError);
 
           //sleep(1);
 
           // Send CONNECT message
           while not self.Terminated do
           begin
-            writeln('loop...');
+            //writeln('loop...');
             SocketWrite(Data);
             error := FPSocket.LastError;
-            writeln('RX_START: ', FPSocket.LastErrorDesc);
-            writeln('RX_START: ', error);
+            //writeln('RX_START: ', FPSocket.LastErrorDesc);
+            //writeln('RX_START: ', error);
             if error = 0 then
             begin
               rxState := RX_FIXED_HEADER;

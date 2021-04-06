@@ -27,7 +27,6 @@ type
   TnkMqtt = class(TComponent)
   private
     FClient:                 TMQTTClient;
-    FHost: string;
     FOnAfterPublish: TnkMQTTOnAfterPublishEvent;
     FOnBeforePublish: TnkMQTTOnBeforePublishEvent;
     FOnLog: TnkMQTTOnLogEvent;
@@ -55,7 +54,7 @@ type
   published
     property PubTimerInterval:integer read FPubTimerInterval write FPubTimerInterval;//发布定时间隔
     property PingTimerInterval:integer read FPingTimerInterval write FPingTimerInterval;//Ping定时间隔
-    property Server:string read FServer write FHost;//服务器地址
+    property Server:string read FServer write FServer;//服务器地址
     property Port:integer read FPort write FPort;//服务器端口
     property Topics:TStrings read GetTopics write SetTopics;//订阅主题列表
     property OnLog:TnkMQTTOnLogEvent read FOnLog write FOnLog; //Log事件
@@ -139,23 +138,25 @@ begin
       nkmRUNNING :
         begin
           // Publish stuff
-          if FPubTimer mod FPubTimerInterval = 0 then
+          if FPubTimer mod FPubTimerInterval > 0 then
           begin
             //发布消息
-            if Assigned(FOnBeforePublish) then
+            //if Assigned(FOnBeforePublish) then
             begin
-              FOnBeforePublish(mMessageID,mTopic,mMessage);
+              //FOnBeforePublish(mMessageID,mTopic,mMessage);
+              mTopic:='testtopic';
+              mMessage:='Hello there, this is a message send from DLL';
               if not FClient.Publish(mTopic, mMessage) then
               begin
                 if Assigned(FOnLog) then
                   FOnLog('Error: Publish Failed.');
                 FState := nkmFAILING;
-                if Assigned(FOnAfterPublish) then
-                  FOnAfterPublish(mMessageID,mTopic,mMessage,False);
+                //if Assigned(FOnAfterPublish) then
+                  //FOnAfterPublish(mMessageID,mTopic,mMessage,False);
               end
               else
               begin
-                FOnAfterPublish(mMessageID,mTopic,mMessage,True);
+                //FOnAfterPublish(mMessageID,mTopic,mMessage,True);
               end;
             end;
           end;
@@ -247,6 +248,7 @@ begin
     CheckSynchronize;
     // Yawn.
     sleep(100);
+    Application.ProcessMessages;
   end;
   FClient.ForceDisconnect;
   FreeAndNil(FClient);

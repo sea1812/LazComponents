@@ -241,7 +241,7 @@ function TMQTTClient.Disconnect: boolean;
 var
   Data: TBytes;
 begin
-  writeln('TMQTTClient.Disconnect');
+  //writeln('TMQTTClient.Disconnect');
   Result := False;
 
   SetLength(Data, 2);
@@ -270,7 +270,7 @@ end;
 ------------------------------------------------------------------------------*}
 procedure TMQTTClient.ForceDisconnect;
 begin
-  writeln('TMQTTClient.ForceDisconnect');
+  //writeln('TMQTTClient.ForceDisconnect');
   if FReadThread <> nil then
   begin
     FReadThread.OnTerminate := nil;
@@ -289,7 +289,7 @@ begin
   FReadThread := nil;
   FReaderThreadRunning := False;
   FisConnected := False;
-  WriteLn('TMQTTClient.OnRTTerminate: Thread.Terminated.');
+  //WriteLn('TMQTTClient.OnRTTerminate: Thread.Terminated.');
 end;
 
 {*------------------------------------------------------------------------------
