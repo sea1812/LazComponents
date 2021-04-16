@@ -11,7 +11,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\$(LCLWidgetType)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="5">
+    <Files Count="7">
       <Item1>
         <Filename Value="nktitlebar.pas"/>
         <HasRegisterProc Value="True"/>
@@ -35,23 +35,36 @@
         <Filename Value="MQTTReadThread.pas"/>
         <UnitName Value="MQTTReadThread"/>
       </Item5>
+      <Item6>
+        <Filename Value="nxlookupedit.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nxLookupEdit"/>
+      </Item6>
+      <Item7>
+        <Filename Value="nkdbgrid.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nkDBGrid"/>
+      </Item7>
     </Files>
-    <RequiredPkgs Count="5">
+    <RequiredPkgs Count="6">
       <Item1>
-        <PackageName Value="pl_synapse"/>
+        <PackageName Value="pl_rx"/>
       </Item1>
       <Item2>
-        <PackageName Value="pl_indy"/>
+        <PackageName Value="pl_synapse"/>
       </Item2>
       <Item3>
-        <PackageName Value="lz_memds"/>
+        <PackageName Value="pl_indy"/>
       </Item3>
       <Item4>
-        <PackageName Value="adLCL"/>
+        <PackageName Value="lz_memds"/>
       </Item4>
       <Item5>
-        <PackageName Value="adFCL"/>
+        <PackageName Value="adLCL"/>
       </Item5>
+      <Item6>
+        <PackageName Value="adFCL"/>
+      </Item6>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>

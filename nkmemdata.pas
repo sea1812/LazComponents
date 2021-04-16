@@ -5,14 +5,14 @@ unit nkMemData;
 interface
 
 uses
-  Classes, SysUtils, typinfo, DB, DateUtils, LResources, Forms, Controls, Graphics, Dialogs, memds, IdHttp,
+  Classes, SysUtils, typinfo, DB, DateUtils, LResources, Forms, Controls, Graphics, Dialogs, rxmemds, IdHttp,
   idGlobal, fpjson;
 
 type
 
   { TnkMemData }
 
-  TnkMemData = class(TMemDataset)
+  TnkMemData = class(TRxMemoryData)
   private
     FHttp:TIdHttp;
   protected
@@ -85,7 +85,7 @@ begin
         mFieldSize:=TJsonObject(jRecord.Items[i]).FindPath('size').AsInteger;
         mFieldNo:=TJsonObject(jRecord.Items[i]).FindPath('no').AsInteger;
         Self.FieldDefs.Add(mFieldName,mFieldType,mFieldSize,False,mFieldNo);
-        Self.CreateTable;
+        //Self.CreateTable;
       end;
       Result:=True;
     except
