@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 786
+  Left = 695
   Height = 470
-  Top = 166
+  Top = 231
   Width = 705
   Caption = 'Form1'
   ClientHeight = 470
@@ -98,5 +98,11 @@ object Form1: TForm1
     )
     ScrollBars = ssAutoVertical
     TabOrder = 2
+  end
+  object Timer1: TTimer
+    Interval = 10000
+    OnTimer = Timer1Timer
+    Left = 405
+    Top = 19
   end
 end

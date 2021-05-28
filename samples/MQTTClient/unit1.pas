@@ -22,11 +22,13 @@ type
     Memo2: TMemo;
     Panel1: TPanel;
     Panel2: TPanel;
+    Timer1: TTimer;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
 
   public
@@ -55,6 +57,11 @@ begin
   Client.OnPublish:=@OnPublish;
   Client.OnSubAck:=@OnSubAck;
   Client.OnUnSubAck:=@OnUnsubAck;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  Client.PingReq;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

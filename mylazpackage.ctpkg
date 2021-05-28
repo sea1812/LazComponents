@@ -46,7 +46,7 @@
         <UnitName Value="nkDBGrid"/>
       </Item7>
     </Files>
-    <RequiredPkgs Count="6">
+    <RequiredPkgs Count="4">
       <Item1>
         <PackageName Value="pl_rx"/>
       </Item1>
@@ -59,12 +59,6 @@
       <Item4>
         <PackageName Value="lz_memds"/>
       </Item4>
-      <Item5>
-        <PackageName Value="adLCL"/>
-      </Item5>
-      <Item6>
-        <PackageName Value="adFCL"/>
-      </Item6>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
