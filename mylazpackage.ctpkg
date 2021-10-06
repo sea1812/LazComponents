@@ -11,7 +11,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\$(LCLWidgetType)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="7">
+    <Files Count="8">
       <Item1>
         <Filename Value="nktitlebar.pas"/>
         <HasRegisterProc Value="True"/>
@@ -45,6 +45,11 @@
         <HasRegisterProc Value="True"/>
         <UnitName Value="nkDBGrid"/>
       </Item7>
+      <Item8>
+        <Filename Value="nxpopupnotice.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="nxPopupNotice"/>
+      </Item8>
     </Files>
     <RequiredPkgs Count="4">
       <Item1>

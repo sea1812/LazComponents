@@ -9,7 +9,7 @@ interface
 
 uses
   nkTitleBar, nkResizer, nkMemData, MQTT, MQTTReadThread, nxLookupEdit, 
-  nkDBGrid, TyphonPackageIntf;
+  nkDBGrid, nxPopupNotice, TyphonPackageIntf;
 
 implementation
 
@@ -20,6 +20,7 @@ begin
   RegisterUnit('nkMemData', @nkMemData.Register);
   RegisterUnit('nxLookupEdit', @nxLookupEdit.Register);
   RegisterUnit('nkDBGrid', @nkDBGrid.Register);
+  RegisterUnit('nxPopupNotice', @nxPopupNotice.Register);
 end;
 
 initialization
